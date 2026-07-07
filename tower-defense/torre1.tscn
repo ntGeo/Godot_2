@@ -1,3 +1,34 @@
 [gd_scene format=3 uid="uid://bqdgv35voj3w"]
 
-[node name="torre1" type="Node2D" unique_id=1551823065]
+[ext_resource type="Script" uid="uid://2we3js7qa86c" path="res://Assets/Scripts/torre_1.gd" id="1_a5sr4"]
+[ext_resource type="Texture2D" uid="uid://brdktplgpd4rw" path="res://Assets/Sprites/pngfind.com-rpg-maker-png-4137844.png" id="2_xhaud"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yeiif"]
+radius = 290.0276
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yf1y"]
+atlas = ExtResource("2_xhaud")
+region = Rect2(0, 0, 133, 276)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vnn0b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yf1y")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="torre1" type="Area2D" unique_id=1086746465]
+script = ExtResource("1_a5sr4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=357991440]
+shape = SubResource("CircleShape2D_yeiif")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=595544725]
+position = Vector2(15, -35)
+sprite_frames = SubResource("SpriteFrames_vnn0b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
