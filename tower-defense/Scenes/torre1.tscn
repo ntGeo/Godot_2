@@ -24,6 +24,10 @@ animations = [{
 [node name="torre1" type="Area2D" unique_id=1086746465]
 script = ExtResource("1_a5sr4")
 
+[node name="punto_disparo" type="Marker2D" parent="." unique_id=1428419452]
+unique_name_in_owner = true
+position = Vector2(-2, -138)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=357991440]
 shape = SubResource("CircleShape2D_yeiif")
 
@@ -31,7 +35,9 @@ shape = SubResource("CircleShape2D_yeiif")
 position = Vector2(15, -35)
 sprite_frames = SubResource("SpriteFrames_vnn0b")
 
-[node name="punto_disparo" type="Marker2D" parent="CollisionShape2D/Sprite2D" unique_id=1428419452]
-position = Vector2(-17, -103)
+[node name="Timer" type="Timer" parent="." unique_id=1471064446]
+wait_time = 0.3
+autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

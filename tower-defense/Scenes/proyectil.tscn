@@ -29,10 +29,17 @@ animations = [{
 }]
 
 [node name="Proyectil" type="Area2D" unique_id=2019212735]
+top_level = true
+position = Vector2(0, 62)
 script = ExtResource("1_qpc1d")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1919234855]
 shape = SubResource("CircleShape2D_yeiif")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2144848797]
 sprite_frames = SubResource("SpriteFrames_vnn0b")
+frame = 1
+frame_progress = 0.9770352
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
