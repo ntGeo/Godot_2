@@ -7,11 +7,6 @@ var distancia_viajada = 0
 var direccion = Vector2.RIGHT.rotated(rotation)
 var target: Node2D = null
 
-# Funcion del movimiento de la bala
-#func _physics_process(delta: float) -> void:
-	#position += direccion * VELOCIDAD * delta
-	# bullet script
-
 
 func _physics_process(delta: float) -> void:
 	if target and is_instance_valid(target):

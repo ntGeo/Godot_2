@@ -12,6 +12,7 @@ y_sort_enabled = true
 script = ExtResource("1_a5tj2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=730655158]
+y_sort_enabled = true
 shape = SubResource("CapsuleShape2D_slpbn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=385697285]

@@ -22,6 +22,7 @@ func shoot():
 		return
 	var target_enemy = enemies_in_range.front()
 
+
 	var bala = BALA.instantiate() as Area2D
 	bala.global_position = %punto_disparo.global_position
 	bala.target = target_enemy

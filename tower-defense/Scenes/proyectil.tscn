@@ -30,7 +30,10 @@ animations = [{
 
 [node name="Proyectil" type="Area2D" unique_id=2019212735]
 top_level = true
+z_index = 2
+y_sort_enabled = true
 position = Vector2(0, 62)
+scale = Vector2(3, 3)
 script = ExtResource("1_qpc1d")
 metadata/_edit_group_ = true
 
