@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cdxbbyjaj8s1"]
+
+[ext_resource type="Texture2D" uid="uid://dll80yx1kw4i3" path="res://Assets/Sprites/projectile_1.png" id="1_mnr2y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yeiif"]
+radius = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnr2y"]
+atlas = ExtResource("1_mnr2y")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpc1d"]
+atlas = ExtResource("1_mnr2y")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vnn0b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mnr2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpc1d")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Proyectil" type="Area2D" unique_id=2019212735]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1919234855]
+shape = SubResource("CircleShape2D_yeiif")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=2144848797]
+sprite_frames = SubResource("SpriteFrames_vnn0b")
