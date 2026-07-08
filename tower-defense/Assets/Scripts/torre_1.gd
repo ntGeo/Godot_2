@@ -4,10 +4,9 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	pass
-	# if bodys enter
-	#shoot proyectile
+		print(enemigo en area)
+	
 	
 func shoot():
-	pass
-	#shoot to position of enemy
+	const BALA = preload("res://Scenes/proyectil.tscn")
+	$CollisionShape2D/Sprite2D/punto_disparo

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://6epohsoygdh4"]
 
 [ext_resource type="Script" uid="uid://cr8u2innch6sx" path="res://mundo.gd" id="1_6ba58"]
+[ext_resource type="PackedScene" uid="uid://bqdgv35voj3w" path="res://Scenes/torre1.tscn" id="2_uqtxj"]
 
 [sub_resource type="Curve2D" id="Curve2D_xwo6f"]
 _data = {
@@ -23,3 +24,8 @@ rotation = -0.013157135
 scale = Vector2(2, 2)
 rotates = false
 loop = false
+
+[node name="torre1" parent="." unique_id=1086746465 instance=ExtResource("2_uqtxj")]
+y_sort_enabled = true
+position = Vector2(276.5, -33.5)
+scale = Vector2(0.3, 0.3)
