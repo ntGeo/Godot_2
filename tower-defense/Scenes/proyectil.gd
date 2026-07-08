@@ -5,11 +5,18 @@ const RANGO = 1200
 
 var distancia_viajada = 0
 var direccion = Vector2.RIGHT.rotated(rotation)
+var target: Node2D = null
+
+# Funcion del movimiento de la bala
+#func _physics_process(delta: float) -> void:
+	#position += direccion * VELOCIDAD * delta
+	# bullet script
 
 
-
-# funcion del movimiento de la bala
 func _physics_process(delta: float) -> void:
+	if target and is_instance_valid(target):
+		direccion = (target.global_position - global_position).normalized()
+		rotation = direccion.angle()
 	position += direccion * VELOCIDAD * delta
 	
 	
@@ -20,7 +27,9 @@ func _physics_process(delta: float) -> void:
 
 
 # Daño
-func _on_body_entered(body:) -> void:
-	queue_free()
+func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage"):
 		body.take_damage()
+	queue_free()
+	
+	
