@@ -15,6 +15,11 @@ func _physics_process(delta: float) -> void:
 #func _on_body_entered(body: Node2D) -> void:
 	#pass
 
+func _on_body_entered(body: Node2D) -> void:
+		print("enemigo en area")
+	
+	
+
 func shoot():
 	var bala = BALA.instantiate() as Area2D
 	bala.global_position = %punto_disparo.global_position
