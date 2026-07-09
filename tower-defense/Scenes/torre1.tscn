@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://brdktplgpd4rw" path="res://Assets/Sprites/pngfind.com-rpg-maker-png-4137844.png" id="2_xhaud"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yeiif"]
-radius = 230.00217
+radius = 354.05084
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7yf1y"]
 atlas = ExtResource("2_xhaud")
@@ -26,13 +26,14 @@ script = ExtResource("1_a5sr4")
 
 [node name="punto_disparo" type="Marker2D" parent="." unique_id=1428419452]
 unique_name_in_owner = true
-position = Vector2(-2, -138)
+position = Vector2(-4, -55)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=357991440]
 shape = SubResource("CircleShape2D_yeiif")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="CollisionShape2D" unique_id=595544725]
-position = Vector2(15, -35)
+position = Vector2(0.99999905, 7.000001)
+scale = Vector2(0.61278194, 0.61278194)
 sprite_frames = SubResource("SpriteFrames_vnn0b")
 
 [node name="Timer" type="Timer" parent="." unique_id=1471064446]

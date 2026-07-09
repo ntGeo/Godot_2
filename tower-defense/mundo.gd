@@ -9,3 +9,13 @@ func _ready():
 	enemigo.path_follow = $Camino/Recorrido
 	add_child(enemigo)
 	
+	
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	show_lose_screen()
+
+func show_lose_screen() -> void:
+	%Label.visible = true
+	%Label.text = "You Lose"
+	get_tree().paused = true  # freezes the whole game
