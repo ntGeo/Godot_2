@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpn3728cg4rj5"]
 
-[ext_resource type="Script" uid="uid://bnjmr85gjhwyk" path="res://enemigo.gd" id="1_a5tj2"]
+[ext_resource type="Script" uid="uid://bnjmr85gjhwyk" path="res://Assets/Scripts/enemigo.gd" id="1_a5tj2"]
 [ext_resource type="Texture2D" uid="uid://b8gkkrqawyomq" path="res://icon.svg" id="1_becj5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_slpbn"]
