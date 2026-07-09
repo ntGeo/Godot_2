@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dndb8khlrl1ry"]
+
+[ext_resource type="Script" uid="uid://dukwk54bn7epv" path="res://Scenes/menu_inicio.gd" id="1_ryjsk"]
+
+[node name="Menu_inicio" type="Control" unique_id=1241604412]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ryjsk")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=595177591]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0.7921569, 1)
+
+[node name="Titulo" type="Label" parent="." unique_id=1039965578]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = -11.5
+offset_right = 58.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Tower Defense"
+
+[node name="Jugar" type="Button" parent="." unique_id=773436430]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.5
+offset_top = 48.5
+offset_right = 24.5
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Jugar"

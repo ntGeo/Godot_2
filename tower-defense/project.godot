@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TowerDefense"
-run/main_scene="uid://6epohsoygdh4"
+run/main_scene="uid://dndb8khlrl1ry"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
