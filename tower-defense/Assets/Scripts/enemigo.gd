@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100
+const SPEED = 50
 
 #Referencia a Pathfollow
 var path_follow: PathFollow2D = null
