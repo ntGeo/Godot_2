@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+var vida = 3
 const SPEED = 80
 
 #Referencia a Pathfollow
@@ -15,3 +16,8 @@ func _physics_process(delta):
 	# Si llegó al final del camino → Game Over
 	if path_follow.progress_ratio >= 1.0:
 		get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+
+func take_damage():
+	vida -= 1
+	if vida == 0:
+		queue_free()
