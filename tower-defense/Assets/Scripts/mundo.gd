@@ -2,14 +2,16 @@ extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	var enemigo_scene = preload("res://Scenes/enemigo.tscn")
-	var enemigo = enemigo_scene.instantiate()
+#func _ready():
+	#var enemigo_scene = preload("res://Scenes/enemigo.tscn")
+	#var enemigo = enemigo_scene.instantiate()
+#
+	#enemigo.path_follow = $Camino/Recorrido
+	#add_child(enemigo)
+	
 
-	enemigo.path_follow = $Camino/Recorrido
-	add_child(enemigo)
-	
-	
+func _process(delta):
+	$HUD/LabelVidas.text = "Vidas: " + str(GameManager.vidas)
 
 #funcion que gatillaba texto al momento en que enemigo llega a final de camino
 #func _on_area_2d_body_entered(body: Node2D) -> void:

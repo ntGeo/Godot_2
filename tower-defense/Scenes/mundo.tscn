@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cr8u2innch6sx" path="res://Assets/Scripts/mundo.gd" id="1_6ba58"]
 [ext_resource type="PackedScene" uid="uid://bqdgv35voj3w" path="res://Scenes/torre1.tscn" id="2_uqtxj"]
 [ext_resource type="Texture2D" uid="uid://c6w23itav5xkt" path="res://Assets/Sprites/map_spritesheet.png" id="3_gqidu"]
+[ext_resource type="Script" uid="uid://cb5g5ggqlktp3" path="res://Assets/Scripts/final_camino.gd" id="4_glouy"]
+[ext_resource type="Script" uid="uid://dtccbhvsy77hc" path="res://Assets/Scripts/gestor_oleadas.gd" id="5_yf8a8"]
 
 [sub_resource type="Curve2D" id="Curve2D_xwo6f"]
 _data = {
@@ -100,9 +102,20 @@ offset_bottom = -50.5
 scale = Vector2(4.760001, 4.760001)
 
 [node name="FinCamino" type="Area2D" parent="." unique_id=111627799]
+script = ExtResource("4_glouy")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FinCamino" unique_id=463120672]
 position = Vector2(20, 0)
 polygon = PackedVector2Array(364.5, 29.5, 364, 87, 408.5, 87.5, 409, 29.5)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1312998376]
+
+[node name="LabelVidas" type="Label" parent="HUD" unique_id=1091348321]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Vidas: 3"
+
+[node name="GestorOleadas" type="Node" parent="." unique_id=463686908]
+script = ExtResource("5_yf8a8")
 
 [connection signal="body_entered" from="FinCamino" to="." method="_on_area_2d_body_entered"]

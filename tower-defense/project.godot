@@ -15,10 +15,18 @@ run/main_scene="uid://dndb8khlrl1ry"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://cj3tpoorw3pwy"
+
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="ignore"
+
+[editor]
+
+movie_writer/movie_file="res://grabacion.avi"
 
 [physics]
 
