@@ -5,8 +5,8 @@ var enemigo_scene = preload("res://Scenes/enemigo.tscn")
 
 # Configuración
 var oleada_actual = 0
-var enemigos_por_oleada = 3
-var tiempo_entre_enemigos = 1.5
+var enemigos_por_oleada = 5
+var tiempo_entre_enemigos = 1
 var tiempo_entre_oleadas = 5.0
 
 func _ready():
