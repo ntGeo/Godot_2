@@ -1,8 +1,12 @@
 extends Area2D
 
+var nombre = 100
+var costo  = 100
+
 const BALA = preload("res://Scenes/proyectil.tscn") 
 var nueva_bala = BALA.instantiate()
 
+#Detecta el enemigo en el area
 func _physics_process(_delta: float) -> void:
 	var  enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0:
@@ -15,6 +19,7 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 		print("enemigo en area")
 	
+
 
 func shoot():
 	var enemies_in_range = get_overlapping_bodies()

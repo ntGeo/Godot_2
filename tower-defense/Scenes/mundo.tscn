@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c6w23itav5xkt" path="res://Assets/Sprites/map_spritesheet.png" id="3_gqidu"]
 [ext_resource type="Script" uid="uid://cb5g5ggqlktp3" path="res://Assets/Scripts/final_camino.gd" id="4_glouy"]
 [ext_resource type="Script" uid="uid://dtccbhvsy77hc" path="res://Assets/Scripts/gestor_oleadas.gd" id="5_yf8a8"]
+[ext_resource type="PackedScene" uid="uid://x1qlvccypblv" path="res://Scenes/curosr.tscn" id="6_qxsm7"]
 
 [sub_resource type="Curve2D" id="Curve2D_xwo6f"]
 _data = {
@@ -117,5 +118,8 @@ text = "Vidas: 3"
 
 [node name="GestorOleadas" type="Node" parent="." unique_id=463686908]
 script = ExtResource("5_yf8a8")
+
+[node name="Node2D" parent="." unique_id=1981658740 instance=ExtResource("6_qxsm7")]
+position = Vector2(71, -63)
 
 [connection signal="body_entered" from="FinCamino" to="." method="_on_area_2d_body_entered"]

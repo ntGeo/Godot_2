@@ -21,3 +21,5 @@ func _process(delta):
 	#%Label.visible = true
 	#%Label.text = "You Lose"
 	#get_tree().paused = true  # freezes the whole game
+
+	
