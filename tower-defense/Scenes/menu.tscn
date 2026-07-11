@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dcx4xc13rutlg"]
+
+[ext_resource type="Texture2D" uid="uid://d1k0aoe7136cj" path="res://Assets/Sprites/menu.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://dxceo5hh3cxu2" path="res://Scenes/menu.gd" id="1_158mb"]
+[ext_resource type="FontFile" uid="uid://cogrwyxw4keqf" path="res://Assets/Font/Jacquard12-Regular.ttf" id="2_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://chou7paen7l5" path="res://Assets/Sprites/Tower 1.png" id="4_wwsa2"]
+
+[node name="menu" type="Control" unique_id=131983625]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_158mb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1596925796]
+visible = false
+rotation = -3.1415925
+scale = Vector2(0.99999994, 1)
+texture = ExtResource("1_1rerr")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=451024333]
+layout_mode = 0
+offset_left = -87.0
+offset_top = -123.0
+offset_right = 88.0
+offset_bottom = 95.0
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=426262842]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=352031910]
+layout_mode = 2
+offset_transform_position = Vector2(7.945, 0)
+accessibility_region = true
+columns = 3
+
+[node name="tower_1" type="Button" parent="MarginContainer/GridContainer" unique_id=615617577]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+offset_transform_position = Vector2(-14.845, -14.35)
+offset_transform_scale = Vector2(0.385, 0.385)
+theme_override_fonts/font = ExtResource("2_xhh6f")
+theme_override_font_sizes/font_size = 8
+text = "Tower"
+icon = ExtResource("4_wwsa2")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+text_direction = 1
+
+[connection signal="pressed" from="MarginContainer/GridContainer/tower_1" to="." method="_on_tower_1_pressed"]
