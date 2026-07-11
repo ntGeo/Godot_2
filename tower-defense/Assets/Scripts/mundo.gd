@@ -22,4 +22,6 @@ func _process(delta):
 	#%Label.text = "You Lose"
 	#get_tree().paused = true  # freezes the whole game
 
+#click de menu
+#
 	

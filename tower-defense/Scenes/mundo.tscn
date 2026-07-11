@@ -89,7 +89,6 @@ loop = false
 z_index = 1
 y_sort_enabled = true
 position = Vector2(356.5, -57.5)
-scale = Vector2(0.3, 0.3)
 
 [node name="Mapa" type="TileMapLayer" parent="." unique_id=1168250194]
 scale = Vector2(0.3, 0.3)
