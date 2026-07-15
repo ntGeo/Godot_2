@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 func _on_tower_1_pressed() -> void:
 		spawn_tower(TORRE1)
-		print('spawn tower1')
+		
 
 func spawn_tower(tower_scene: PackedScene) -> void:
 	if following_tower:
@@ -19,21 +19,26 @@ func spawn_tower(tower_scene: PackedScene) -> void:
 	following_tower = tower_scene.instantiate()
 	get_tree().current_scene.add_child(following_tower)
 
-	
-#Al presionar tab sacar el menu de contruir
-func _process(delta: float) -> void:
+	# pause its logic and dim it while it's just a preview
+	following_tower.process_mode = Node.PROCESS_MODE_DISABLED
+	following_tower.modulate.a = 0.5
+
+# Al presionar tab sacar el menu de contruir
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("Tab") and visible == false:
 		print('menu')
 		visible = true
-	
 	elif Input.is_action_just_pressed("Tab") and visible == true:
 		print('menu')
 		visible = false
-		
+
 	if following_tower:
 		following_tower.global_position = get_global_mouse_position()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if following_tower:
+			# activate it properly now that it's being placed
+			following_tower.process_mode = Node.PROCESS_MODE_INHERIT
+			following_tower.modulate.a = 1.0
 			following_tower = null  # _process stops touching it, so it stays put
