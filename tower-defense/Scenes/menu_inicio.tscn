@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dndb8khlrl1ry"]
 
 [ext_resource type="Script" uid="uid://dukwk54bn7epv" path="res://Assets/Scripts/menu_inicio.gd" id="1_ryjsk"]
+[ext_resource type="FontFile" uid="uid://b6v5tnf1ndqc8" path="res://Assets/Font/PixelifySans-Regular.ttf" id="2_h8kkd"]
 
 [node name="Menu_inicio" type="Control" unique_id=1241604412]
 layout_mode = 3
@@ -34,6 +35,7 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_h8kkd")
 theme_override_font_sizes/font_size = 40
 text = "Tower Defense"
 

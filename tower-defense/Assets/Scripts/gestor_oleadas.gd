@@ -16,7 +16,6 @@ func iniciar_oleada():
 	oleada_actual += 1
 	# Cada oleada tiene más enemigos
 	enemigos_por_oleada = 3 + (oleada_actual - 1) * 2
-	print("Oleada ", oleada_actual, " — ", enemigos_por_oleada, " enemigos")
 	await get_tree().create_timer(1.0).timeout
 	spawnear_enemigos(enemigos_por_oleada)
 
@@ -32,7 +31,6 @@ func spawnear_enemigos(cantidad):
 func spawnear_enemigo():
 	var path_follow = PathFollow2D.new()
 	get_node("/root/mundo/Camino").add_child(path_follow)
-	print("PathFollow creado: ", path_follow.get_instance_id())
 	
 	var enemigo = enemigo_scene.instantiate()
 	enemigo.path_follow = path_follow

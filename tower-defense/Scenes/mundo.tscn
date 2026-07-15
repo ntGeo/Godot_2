@@ -116,6 +116,12 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Vidas: 3"
 
+[node name="LabelMonedas" type="Label" parent="HUD" unique_id=1109089954]
+offset_top = 24.0
+offset_right = 107.0
+offset_bottom = 47.0
+text = "Monedas: 100"
+
 [node name="GestorOleadas" type="Node" parent="." unique_id=463686908]
 script = ExtResource("5_yf8a8")
 
