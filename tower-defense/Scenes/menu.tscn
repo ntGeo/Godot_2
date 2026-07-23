@@ -1,50 +1,71 @@
 [gd_scene format=3 uid="uid://dcx4xc13rutlg"]
 
-[ext_resource type="Texture2D" uid="uid://d1k0aoe7136cj" path="res://Assets/Sprites/menu.png" id="1_1rerr"]
 [ext_resource type="Script" uid="uid://dxceo5hh3cxu2" path="res://Assets/Scripts/menu.gd" id="1_158mb"]
-[ext_resource type="FontFile" uid="uid://cogrwyxw4keqf" path="res://Assets/Font/Jacquard12-Regular.ttf" id="2_xhh6f"]
 [ext_resource type="Texture2D" uid="uid://chou7paen7l5" path="res://Assets/Sprites/Tower 1.png" id="4_wwsa2"]
 
 [node name="menu" type="Control" unique_id=131983625]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 160.0
+grow_vertical = 2
 script = ExtResource("1_158mb")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1596925796]
-visible = false
-rotation = -3.1415925
-scale = Vector2(0.99999994, 1)
-texture = ExtResource("1_1rerr")
+[node name="Fondo" type="ColorRect" parent="." unique_id=167896565]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=451024333]
-layout_mode = 0
-offset_left = -87.0
-offset_top = -123.0
-offset_right = 88.0
-offset_bottom = 95.0
+[node name="Contenido" type="VBoxContainer" parent="." unique_id=1349236190]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="MarginContainer" unique_id=426262842]
+[node name="LabelVidas" type="Label" parent="Contenido" unique_id=1327611202]
+layout_mode = 2
+text = "Vidas: 3"
+
+[node name="LabelMonedas" type="Label" parent="Contenido" unique_id=1611138105]
+layout_mode = 2
+text = "Monedas: 100"
+
+[node name="HSeparator" type="HSeparator" parent="Contenido" unique_id=617193340]
 layout_mode = 2
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer" unique_id=352031910]
+[node name="GridContainer" type="GridContainer" parent="Contenido" unique_id=352031910]
+custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
+size_flags_vertical = 0
 offset_transform_position = Vector2(7.945, 0)
 accessibility_region = true
-columns = 3
 
-[node name="tower_1" type="Button" parent="MarginContainer/GridContainer" unique_id=615617577]
+[node name="TorreItem1" type="VBoxContainer" parent="Contenido/GridContainer" unique_id=2086233724]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 0
-offset_transform_position = Vector2(-14.845, -14.35)
-offset_transform_scale = Vector2(0.385, 0.385)
-theme_override_fonts/font = ExtResource("2_xhh6f")
-theme_override_font_sizes/font_size = 8
-text = "Tower"
-icon = ExtResource("4_wwsa2")
-icon_alignment = 1
-vertical_icon_alignment = 0
-expand_icon = true
-text_direction = 1
+alignment = 1
 
-[connection signal="pressed" from="MarginContainer/GridContainer/tower_1" to="." method="_on_tower_1_pressed"]
+[node name="LabelTorre1" type="Label" parent="Contenido/GridContainer/TorreItem1" unique_id=1113913889]
+layout_mode = 2
+text = "Torre 1"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Contenido/GridContainer/TorreItem1" unique_id=1721109174]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+texture = ExtResource("4_wwsa2")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CostoTorre1" type="Label" parent="Contenido/GridContainer/TorreItem1" unique_id=1626719935]
+layout_mode = 2
+text = "Costo: 80"
+horizontal_alignment = 1
+
+[connection signal="gui_input" from="Contenido/GridContainer/TorreItem1/TextureRect" to="." method="_on_texture_rect_gui_input"]

@@ -30,7 +30,7 @@ func spawnear_enemigos(cantidad):
 
 func spawnear_enemigo():
 	var path_follow = PathFollow2D.new()
-	get_node("/root/mundo/Camino").add_child(path_follow)
+	get_node("/root/mundo/Juego/Camino").add_child(path_follow)
 	
 	var enemigo = enemigo_scene.instantiate()
 	enemigo.path_follow = path_follow

@@ -68,16 +68,19 @@ tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_glouy")
 
 [node name="mundo" type="Node2D" unique_id=2078999226]
-position = Vector2(267, 311)
+position = Vector2(160, 311)
 scale = Vector2(2, 2)
 script = ExtResource("1_6ba58")
 
-[node name="Camino" type="Path2D" parent="." unique_id=1911852252]
+[node name="Juego" type="Node2D" parent="." unique_id=1071380470]
+position = Vector2(150, 0)
+
+[node name="Camino" type="Path2D" parent="Juego" unique_id=1911852252]
 z_index = 1
 scale = Vector2(2, 2)
 curve = SubResource("Curve2D_xwo6f")
 
-[node name="Recorrido" type="PathFollow2D" parent="Camino" unique_id=1084445962]
+[node name="Recorrido" type="PathFollow2D" parent="Juego/Camino" unique_id=1084445962]
 z_index = 1
 position = Vector2(-55.25, -49)
 rotation = -0.013157135
@@ -85,49 +88,52 @@ scale = Vector2(2, 2)
 rotates = false
 loop = false
 
-[node name="torre1" parent="." unique_id=1086746465 instance=ExtResource("2_uqtxj")]
+[node name="torre1" parent="Juego" unique_id=1086746465 instance=ExtResource("2_uqtxj")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(356.5, -57.5)
 
-[node name="Mapa" type="TileMapLayer" parent="." unique_id=1168250194]
+[node name="Mapa" type="TileMapLayer" parent="Juego" unique_id=1168250194]
 scale = Vector2(0.3, 0.3)
 tile_map_data = PackedByteArray("AAD8//v/AAACAAcAAAD9//v/AAACAAcAAAD+//v/AAACAAcAAAD///v/AAACAAcAAAAAAPv/AAACAAcAAAABAPv/AAACAAcAAAACAPv/AAACAAcAAAADAPv/AAACAAAAAAAEAPv/AAACAAcAAAAFAPv/AAACAAcAAAAGAPv/AAACAAcAAAAHAPv/AAACAAcAAAAIAPv/AAACAAcAAAAJAPv/AAACAAcAAAAKAPv/AAACAAcAAAALAPv/AAADAAYAAAAMAPv/AAACAAcAAAAMAPz/AAACAAcAAAALAPz/AAACAAcAAAAKAPz/AAACAAcAAAAJAPz/AAACAAcAAAAIAPz/AAACAAcAAAAHAPz/AAADAAYAAAAGAPz/AAACAAcAAAAFAPz/AAACAAAAAAAEAPz/AAACAAcAAAADAPz/AAACAAcAAAACAPz/AAACAAcAAAABAPz/AAACAAcAAAAAAPz/AAADAAYAAAD///z/AAACAAcAAAD+//z/AAACAAcAAAD9//z/AAACAAAAAAD8//z/AAACAAcAAAD8//3/AAACAAcAAAD9//3/AAABAAEAAAD+//3/AAABAAEAAAD///3/AAABAAEAAAAAAP3/AAABAAEAAAABAP3/AAABAAEAAAACAP3/AAABAAEAAAADAP3/AAABAAEAAAAEAP3/AAABAAEAAAAFAP3/AAABAAEAAAAGAP3/AAABAAEAAAAHAP3/AAABAAEAAAAIAP3/AAABAAEAAAAJAP3/AAABAAEAAAAKAP3/AAADAAUAAAALAP3/AAABAAcAAAAMAP3/AAACAAcAAAAMAP7/AAACAAcAAAALAP7/AAACAAcAAAAKAP7/AAAAAAcAAAAJAP7/AAACAAcAAAAIAP7/AAACAAcAAAAHAP7/AAACAAcAAAAGAP7/AAACAAcAAAAFAP7/AAADAAYAAAAEAP7/AAACAAcAAAADAP7/AAACAAcAAAACAP7/AAACAAcAAAABAP7/AAACAAcAAAAAAP7/AAACAAcAAAD///7/AAACAAAAAAD8//7/AAACAAcAAAD9//7/AAABAAcAAAD+//7/AAACAAcAAAD8////AAACAAAAAAD9////AAACAAcAAAD+////AAAFAAQAAAD/////AAABAAEAAAAAAP//AAABAAEAAAABAP//AAABAAEAAAACAP//AAABAAEAAAADAP//AAABAAEAAAAEAP//AAABAAEAAAAFAP//AAABAAEAAAAGAP//AAABAAEAAAAHAP//AAABAAEAAAAIAP//AAABAAEAAAAJAP//AAABAAEAAAAKAP//AAAEAAIAAAALAP//AAACAAcAAAAMAP//AAACAAAAAAAMAAAAAAACAAcAAAALAAAAAAACAAcAAAAKAAAAAAACAAcAAAAJAAAAAAACAAcAAAAIAAAAAAABAAcAAAAHAAAAAAACAAcAAAAGAAAAAAACAAcAAAAFAAAAAAACAAcAAAAEAAAAAAACAAcAAAADAAAAAAACAAcAAAACAAAAAAABAAcAAAABAAAAAAADAAYAAAAAAAAAAAACAAcAAAD//wAAAAACAAcAAAD+/wAAAAAAAAcAAAD9/wAAAAACAAcAAAD8/wAAAAACAAcAAAD8/wEAAAABAAcAAAD9/wEAAAACAAcAAAD+/wEAAAAEAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAFAAEAAAABAAEAAAAGAAEAAAABAAEAAAAHAAEAAAABAAEAAAAIAAEAAAABAAEAAAAJAAEAAAABAAEAAAAKAAEAAAACAAcAAAALAAEAAAACAAcAAAAMAAEAAAACAAcAAAAMAAIAAAACAAcAAAALAAIAAAACAAAAAAAKAAIAAAACAAcAAAAJAAIAAAACAAcAAAAIAAIAAAACAAcAAAAHAAIAAAACAAcAAAAGAAIAAAACAAcAAAAFAAIAAAACAAcAAAAEAAIAAAACAAcAAAADAAIAAAACAAcAAAACAAIAAAACAAcAAAABAAIAAAADAAYAAAAAAAIAAAACAAcAAAD//wIAAAABAAcAAAD+/wIAAAACAAAAAAD9/wIAAAACAAcAAAD8/wIAAAACAAcAAAD8/wMAAAACAAcAAAD9/wMAAAACAAcAAAD+/wMAAAACAAcAAAD//wMAAAACAAcAAAAAAAMAAAACAAcAAAABAAMAAAACAAcAAAACAAMAAAACAAcAAAADAAMAAAACAAcAAAAEAAMAAAACAAcAAAAFAAMAAAACAAAAAAAGAAMAAAACAAcAAAAHAAMAAAADAAYAAAAIAAMAAAACAAcAAAAJAAMAAAACAAAAAAAKAAMAAAACAAcAAAALAAMAAAACAAcAAAAMAAMAAAACAAcAAAAMAAQAAAACAAcAAAALAAQAAAACAAcAAAAKAAQAAAACAAcAAAAJAAQAAAACAAcAAAAIAAQAAAACAAcAAAAHAAQAAAACAAcAAAAGAAQAAAACAAcAAAAFAAQAAAACAAcAAAAEAAQAAAACAAcAAAADAAQAAAACAAcAAAACAAQAAAACAAAAAAABAAQAAAACAAcAAAAAAAQAAAACAAcAAAD//wQAAAACAAcAAAD+/wQAAAACAAcAAAD9/wQAAAACAAcAAAD8/wQAAAACAAcAAAA=")
 tile_set = SubResource("TileSet_slpbn")
 
-[node name="Label" type="Label" parent="." unique_id=1175366429]
+[node name="Label" type="Label" parent="Juego" unique_id=1175366429]
 unique_name_in_owner = true
 offset_top = -73.5
 offset_right = 40.0
 offset_bottom = -50.5
 scale = Vector2(4.760001, 4.760001)
 
-[node name="FinCamino" type="Area2D" parent="." unique_id=111627799]
+[node name="FinCamino" type="Area2D" parent="Juego" unique_id=111627799]
 script = ExtResource("4_glouy")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="FinCamino" unique_id=463120672]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Juego/FinCamino" unique_id=463120672]
 position = Vector2(20, 0)
 polygon = PackedVector2Array(364.5, 29.5, 364, 87, 408.5, 87.5, 409, 29.5)
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1312998376]
-
-[node name="LabelVidas" type="Label" parent="HUD" unique_id=1091348321]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Vidas: 3"
-
-[node name="LabelMonedas" type="Label" parent="HUD" unique_id=1109089954]
-offset_top = 24.0
-offset_right = 107.0
-offset_bottom = 47.0
-text = "Monedas: 100"
-
-[node name="GestorOleadas" type="Node" parent="." unique_id=463686908]
+[node name="GestorOleadas" type="Node" parent="Juego" unique_id=463686908]
 script = ExtResource("5_yf8a8")
 
-[node name="Node2D" parent="." unique_id=1981658740 instance=ExtResource("6_qxsm7")]
+[node name="Node2D" parent="Juego" unique_id=1981658740 instance=ExtResource("6_qxsm7")]
 position = Vector2(71, -63)
 
-[node name="menu" parent="." unique_id=131983625 instance=ExtResource("7_i8avv")]
+[node name="UILayer" type="CanvasLayer" parent="Juego" unique_id=884576201]
+layer = 10
 
-[connection signal="body_entered" from="FinCamino" to="." method="_on_area_2d_body_entered"]
+[node name="UIRoot" type="Control" parent="Juego/UILayer" unique_id=1606237713]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu" parent="Juego/UILayer/UIRoot" unique_id=131983625 instance=ExtResource("7_i8avv")]
+layout_mode = 1
+offset_left = 267.0
+offset_top = -177.0
+offset_right = 267.0
+offset_bottom = -665.0
+
+[connection signal="body_entered" from="Juego/FinCamino" to="." method="_on_area_2d_body_entered"]
