@@ -68,4 +68,12 @@ layout_mode = 2
 text = "Costo: 80"
 horizontal_alignment = 1
 
+[node name="LabelAviso" type="Label" parent="Contenido" unique_id=1074201742]
+visible = false
+modulate = Color(0.64965594, 0.121146075, 0.18464944, 1)
+layout_mode = 2
+text = "Monedas 
+insuficientes!!!!"
+horizontal_alignment = 1
+
 [connection signal="gui_input" from="Contenido/GridContainer/TorreItem1/TextureRect" to="." method="_on_texture_rect_gui_input"]

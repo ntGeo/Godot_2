@@ -31,11 +31,22 @@ func _process(_delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		print("Clic detectado, following_tower: ", following_tower)
 		if following_tower:
-			following_tower.process_mode = Node.PROCESS_MODE_INHERIT
-			following_tower.modulate.a = 1.0
-			following_tower = null
+			if GameManager.puede_construir():
+				GameManager.construir_torre()
+				following_tower.process_mode = Node.PROCESS_MODE_INHERIT
+				following_tower.modulate.a = 1.0
+				following_tower = null
+			else:
+				following_tower.queue_free()
+				following_tower = null
+				mostrar_aviso()
+
+func mostrar_aviso():
+	$Contenido/LabelAviso.visible = true
+	# Ocultamos el aviso después de 2 segundos
+	await get_tree().create_timer(2.0).timeout
+	$Contenido/LabelAviso.visible = false
 
 
 func _on_texture_rect_gui_input(event: InputEvent) -> void:
