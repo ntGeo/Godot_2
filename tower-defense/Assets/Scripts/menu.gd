@@ -30,6 +30,7 @@ func _process(_delta: float) -> void:
 		#print("Torre siguiendo mouse: ", mouse_pos)
 
 func _input(event: InputEvent) -> void:
+	#Colocar torre con clic izq
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		if following_tower:
 			if GameManager.puede_construir():
@@ -41,6 +42,18 @@ func _input(event: InputEvent) -> void:
 				following_tower.queue_free()
 				following_tower = null
 				mostrar_aviso()
+				
+	# Cancelar con clic derecho
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+		if following_tower:
+			following_tower.queue_free()
+			following_tower = null
+	
+	# Cancelar con Escape
+	if event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
+		if following_tower:
+			following_tower.queue_free()
+			following_tower = null
 
 func mostrar_aviso():
 	$Contenido/LabelAviso.visible = true
